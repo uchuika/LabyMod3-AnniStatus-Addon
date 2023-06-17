@@ -1,0 +1,7 @@
+{
+  "name": "AnniStatus Addon",
+  "uuid": "%uuid%",
+  "mainClass": "com.uchuika.anniaddon.AnniStatusAddon",
+  "author": "uchuika",
+  "transformerClass": "com.example.addon.ExampleAddonTransformer"
+}
