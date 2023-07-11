@@ -15,7 +15,16 @@ public class AnniMessageReciveEvent {
     public static void onReceiveChat(String chat) {
         String[] split = chat.split((" "));
 
-        //System.out.println("chat:" + chat + "type:" + type);
+        //Nexusカウンター
+        if(split.length>=7){
+            if(split[6].equals("nexus!")){
+                String user = split[0];
+                if(user.contains(Minecraft.getInstance().player.getName().getString())){
+                    AnniPlayerData.nexus++;
+                }
+            }
+        }
+
         if(split.length>=3&&chat.contains("killed") || chat.contains("shot")) {
             String killer=split[0].substring(0, split[0].length()-5);
 

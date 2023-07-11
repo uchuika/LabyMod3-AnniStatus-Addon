@@ -3,6 +3,7 @@ package com.uchuika.anniaddon;
 import java.util.List;
 
 import com.uchuika.anniaddon.module.ActiveKillModule;
+import com.uchuika.anniaddon.module.NexusCounterModule;
 import com.uchuika.anniaddon.module.TotalKillModule;
 import net.labymod.api.LabyModAddon;
 import net.labymod.settings.elements.BooleanElement;
@@ -23,6 +24,7 @@ public class AnniStatusAddon extends LabyModAddon {
 
     AnniPlayerData.meleekillCount = 0;
     AnniPlayerData.activekillCount = 0;
+    AnniPlayerData.nexus = 0;
 
     getApi().getEventService().registerListener(new AnniMessageReciveEvent());
 
@@ -30,6 +32,7 @@ public class AnniStatusAddon extends LabyModAddon {
 
     getApi().registerModule(new ActiveKillModule());
     getApi().registerModule(new TotalKillModule());
+    getApi().registerModule(new NexusCounterModule());
   }
 
   @Override
@@ -46,6 +49,7 @@ public class AnniStatusAddon extends LabyModAddon {
       public void accept( Boolean accepted ) {
         AnniPlayerData.meleekillCount = 0;
         AnniPlayerData.activekillCount = 0;
+        AnniPlayerData.nexus = 0;
       }
     } /* Change listener */, true /* current value */ ) );
 
